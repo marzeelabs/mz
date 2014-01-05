@@ -1,6 +1,3 @@
-; Use with
-; includes[mz_commerce] = "https://raw.github.com/marzeelabs/mz_make/master/mz_commerce.make?login=marzeelabs&token=17afd893feddf9a7c9246ee2d404b97a"
-
 core = 7.x
 api = 2
 

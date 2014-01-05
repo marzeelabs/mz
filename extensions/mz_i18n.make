@@ -1,6 +1,3 @@
-; Use with
-; includes[mz_i18n] = "https://bitbucket.org/marzeelabs/mz_make/raw/ebb2b1251c1ea2638edbb22f169c2056aa71a6e1/mz_i18n.make"
-
 core = 7.x
 api = 2
 

@@ -1,6 +1,3 @@
-; Use with
-; includes[mz_geo] = "https://raw.github.com/marzeelabs/mz_make/master/mz_geo.make?login=marzeelabs&token=3a19b3c755ce3f158d94f7ef4ced2742"
-
 core = 7.x
 api = 2
 

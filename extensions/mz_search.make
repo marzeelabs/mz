@@ -1,6 +1,3 @@
-; Use with
-; includes[mz_search] = "https://raw.github.com/marzeelabs/mz_make/master/mz_search.make?login=marzeelabs&token=be8791dc15c4bace22022cf25064ad48"
-
 core = 7.x
 api = 2
 
