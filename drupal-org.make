@@ -16,7 +16,7 @@ projects[drupal][version] = 7.23
 projects[entity][version] = 1.2
 projects[entity][subdir] = "contrib"
 
-projects[field_group][version] = 1.2
+projects[field_group][version] = 1.3
 projects[field_group][subdir] = "contrib"
 ; Allow preprocess fields to be within field_groups. Still has issues unfortunately. Read on http://drupal.org/node/1342878
 ; It doesn't apply cleanly anymore, so we disable it for now. When we notice errors we can revisit
@@ -37,13 +37,13 @@ projects[date][subdir] = "contrib"
 projects[email][version] = 1.2
 projects[email][subdir] = "contrib"
 
-projects[link][version] = 1.1
+projects[link][version] = 1.2
 projects[link][subdir] = "contrib"
 
-projects[addressfield][version] = 1.0-beta3
+projects[addressfield][version] = 1.0-beta5
 projects[addressfield][subdir] = "contrib"
 ; See http://drupal.org/node/991834#comment-6220660
-projects[addressfield][patch][] = "http://drupal.org/files/addressfield-additional_views_fieldformatters-991834-41.patch"
+; projects[addressfield][patch][] = "http://drupal.org/files/addressfield-additional_views_fieldformatters-991834-41.patch"
 ; See http://drupal.org/node/968112#comment-6581524
 projects[addressfield][patch][] = "http://drupal.org/files/addressfield-nocountry_option-968112-98.patch"
 
@@ -54,13 +54,13 @@ projects[views][subdir] = "contrib"
 projects[views_bulk_operations][version] = 3.2
 projects[views_bulk_operations][subdir] = "contrib"
 
-projects[rules][version] = 2.3
+projects[rules][version] = 2.6
 projects[rules][subdir] = "contrib"
 
 projects[context][version] = 3.1
 projects[context][subdir] = "contrib"
 
-projects[flag][version] = 2.0
+projects[flag][version] = 2.1
 projects[flag][subdir] = "contrib"
 
 projects[menu_block][version] = 2.3
@@ -89,10 +89,10 @@ projects[devel][subdir] = "contrib"
 ; Keep an eye on the following issues
 ; - (should be fixed, TBR) https://drupal.org/node/1722524 Allow to export taxonomy using machine name instead of vid
 ; - (should be fixed, TBR) https://drupal.org/files/features_static_caches-1063204-32.patch
-projects[features][version] = 2.0-rc3
-projects[features][subdir] = "contrib"
 ; Fixing overrides related to media, see https://drupal.org/node/2071073#comment-7797185
-projects[features][patch][] = "https://drupal.org/files/features-get-component-status-do-not-test.patch"
+; - (should be fixed, TBR) https://drupal.org/files/features-get-component-status-do-not-test.patch
+projects[features][version] = 2.0
+projects[features][subdir] = "contrib"
 
 projects[strongarm][version] = 2.0
 projects[strongarm][subdir] = "contrib"

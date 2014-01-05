@@ -83,6 +83,7 @@ dependencies[] = menu_admin_per_menu
 dependencies[] = features
 dependencies[] = devel
 dependencies[] = admin_menu
+dependencies[] = admin_menu_toolbar
 
 ; MZ - SEO
 ;dependencies[] = googleanalytics
