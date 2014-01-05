@@ -45,7 +45,7 @@ projects[addressfield][subdir] = "contrib"
 ; See http://drupal.org/node/991834#comment-6220660
 ; projects[addressfield][patch][] = "http://drupal.org/files/addressfield-additional_views_fieldformatters-991834-41.patch"
 ; See http://drupal.org/node/968112#comment-6581524
-projects[addressfield][patch][] = "http://drupal.org/files/addressfield-nocountry_option-968112-98.patch"
+projects[addressfield][patch][] = "https://drupal.org/files/issues/addressfield-nocountry_option-968112-132_1.0-beta4.patch"
 
 ; Site building modules
 projects[views][version] = 3.7
