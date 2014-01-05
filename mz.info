@@ -1,0 +1,104 @@
+name = Marzee Labs
+description = A Marzee Labs start site with our favorite modules.
+core = 7.x
+
+; MZ - core
+dependencies[] = block
+dependencies[] = comment
+dependencies[] = contextual
+dependencies[] = image
+dependencies[] = list
+dependencies[] = menu
+dependencies[] = number
+dependencies[] = options
+dependencies[] = path
+dependencies[] = taxonomy
+dependencies[] = dblog
+dependencies[] = field_ui
+dependencies[] = file
+
+; MZ - general
+dependencies[] = libraries
+dependencies[] = strongarm
+dependencies[] = masquerade
+dependencies[] = addressfield
+dependencies[] = advanced_help
+dependencies[] = backup_migrate
+dependencies[] = context
+dependencies[] = context_ui
+dependencies[] = ctools
+dependencies[] = date
+dependencies[] = date_all_day
+dependencies[] = date_api
+dependencies[] = date_popup
+dependencies[] = date_views
+dependencies[] = diff
+dependencies[] = email
+dependencies[] = entity
+dependencies[] = entityreference
+dependencies[] = entity_token
+dependencies[] = file
+dependencies[] = filter
+dependencies[] = jquery_update
+dependencies[] = link
+dependencies[] = menu_block
+dependencies[] = token
+dependencies[] = views_content
+dependencies[] = views_bulk_operations
+dependencies[] = field_group
+dependencies[] = ds
+dependencies[] = ds_extras
+dependencies[] = ds_ui
+dependencies[] = views
+dependencies[] = views_ui
+dependencies[] = entitycache
+dependencies[] = rules
+dependencies[] = rules_admin
+dependencies[] = flag
+dependencies[] = invisimail
+dependencies[] = spamicide
+dependencies[] = caption_filter
+dependencies[] = transliteration
+
+; MZ - Media
+dependencies[] = media
+; To be reviewed carefully before enabling again
+;dependencies[] = media_internet
+;dependencies[] = media_youtube
+dependencies[] = module_filter
+dependencies[] = file_entity
+
+; MZ - Editor
+dependencies[] = wysiwyg
+dependencies[] = workbench
+dependencies[] = workbench_files
+dependencies[] = workbench_media
+dependencies[] = workbench_moderation
+dependencies[] = ckeditor_link
+dependencies[] = menu_admin_per_menu
+;Solve dependency on main make file from within the .install first and contribute patch - if not chosen is useless in a profile info file
+;dependencies[] = chosen
+
+; MZ -Developer
+dependencies[] = features
+dependencies[] = devel
+dependencies[] = admin_menu
+
+; MZ - SEO
+;dependencies[] = googleanalytics
+dependencies[] = pathauto
+dependencies[] = xmlsitemap
+dependencies[] = xmlsitemap_custom
+dependencies[] = xmlsitemap_node
+dependencies[] = xmlsitemap_taxonomy
+dependencies[] = xmlsitemap_user
+dependencies[] = xmlsitemap_engines
+dependencies[] = globalredirect
+; Won't enable until http://drupal.org/node/1796596 is fixed, if not we create infinite redirects. Globalredirect alone should do the trick for now
+;dependencies[] = redirect
+
+
+; MZ - features
+dependencies[] = mz_site
+dependencies[] = mz_editorial
+

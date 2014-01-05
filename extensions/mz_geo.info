@@ -1,0 +1,7 @@
+; MZ - Geo
+dependencies[] = geocoder
+dependencies[] = geofield
+dependencies[] = geophp
+dependencies[] = leaflet
+dependencies[] = leaflet_markercluster
+dependencies[] = leaflet_views

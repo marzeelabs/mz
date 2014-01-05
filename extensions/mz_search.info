@@ -1,0 +1,12 @@
+; Search API
+dependencies[] = search_api
+dependencies[] = search_api_db
+dependencies[] = search_api_page
+
+; Facets
+dependencies[] = search_api_facetapi
+dependencies[] = facetapi
+dependencies[] = current_search
+
+; If using i18n
+; dependencies[] = search_api_et

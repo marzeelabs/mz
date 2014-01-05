@@ -1,0 +1,23 @@
+; Drupal core
+dependencies[] = locale
+
+; Entity and field translation
+dependencies[] = entity_translation
+dependencies[] = title
+
+; From variable
+dependencies[] = variable
+dependencies[] = variable_realm
+dependencies[] = variable_store
+
+; From i18n
+dependencies[] = i18n
+dependencies[] = i18n_variable
+dependencies[] = i18n_menu
+dependencies[] = i18n_string
+dependencies[] = i18n_translation
+dependencies[] = i18n_field
+
+; Other
+dependencies[] = i18nviews
+
