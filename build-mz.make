@@ -8,4 +8,3 @@ includes[] = drupal-org-core.make
 projects[mz][type] = "profile"
 projects[mz][download][type] = "git"
 projects[mz][download][url] = "git@github.com:marzeelabs/mz.git"
-projects[mz][download][branch] = "master"

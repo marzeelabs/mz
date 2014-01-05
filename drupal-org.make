@@ -41,7 +41,7 @@ projects[link][subdir] = "contrib"
 projects[addressfield][version] = 1.0-beta5
 projects[addressfield][subdir] = "contrib"
 ; See http://drupal.org/node/968112#comment-6581524
-projects[addressfield][patch][] = "http://drupal.org/files/addressfield-nocountry_option-968112-98.patch"
+projects[addressfield][patch][] = "https://drupal.org/files/issues/addressfield-nocountry_option-968112-132_1.0-beta4.patch"
 
 ; Site building modules
 projects[views][version] = 3.7

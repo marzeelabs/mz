@@ -1,10 +1,6 @@
 # MZ Make
 **Drupal makefiles and profile from Marzee Labs to kick-start Drupal development**
 
-## Dependencies
-
-* https://github.com/marzeelabs/mz_drush
-
 ## Usage
 
 ### Drush make and profile install
@@ -13,22 +9,6 @@
 drush make mz_make/mz.make MYSITE --prepare-install
 ```
 Builds a Marzee Labs site ready to be installed
-
-```sh
-cd MYSITE/
-mz_profile_copy mz
-```
-Copy the MZ profile into the profiles folder
-
-```sh
-mysql -uUSER -pPASS -e 'create database DATABASE;'
-```
-Create a MySQL database
-
-```
-http://local/MYSITE/install.php
-```
-Install the site
 
 ```php
 # put all errors (for debugging environment)
