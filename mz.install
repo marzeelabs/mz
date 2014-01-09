@@ -9,9 +9,13 @@
  * likely be changed over the course of the project.
  */
 function mz_install() {
-  // Install the minimal profile
-  include_once DRUPAL_ROOT . '/profiles/minimal/minimal.install';
-  minimal_install();
+  // From the minimal profile
+  // Only administrators can create user accounts.
+  variable_set('user_register', USER_REGISTER_ADMINISTRATORS_ONLY);
+
+  // Enable default permissions for system roles.
+  user_role_grant_permissions(DRUPAL_ANONYMOUS_RID, array('access content'));
+  user_role_grant_permissions(DRUPAL_AUTHENTICATED_RID, array('access content'));
 
   // Add text formats.
   $filtered_html_format = array(
@@ -90,8 +94,9 @@ function mz_install() {
     ->execute();
 
   // Enable the admin theme.
-  theme_enable(array('seven'));
-  variable_set('admin_theme', 'seven');
+  $admin_theme = 'seven';
+  theme_enable(array($admin_theme));
+  variable_set('admin_theme', $admin_theme);
   variable_set('node_admin_theme', '1');
 
   // Configure Views in developer mode
