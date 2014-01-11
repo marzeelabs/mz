@@ -170,13 +170,14 @@ projects[workbench_files][subdir] = "contrib"
 projects[ckeditor_link][version] = 2.3
 projects[ckeditor_link][subdir] = "contrib"
 
-projects[wysiwyg][version] = 2.1
+projects[wysiwyg][version] = 2.2
 projects[wysiwyg][subdir] = "contrib"
-projects[wysiwyg][patch][] = "http://drupal.org/files/507696-65.wysiwyg_per_field.patch"
-; see http://drupal.org/node/624018 - seems solved
-projects[wysiwyg][patch][] = "http://drupal.org/files/0001-feature.inc-from-624018-211-drush_make-7.x-2.1.patch"
-; add support for CKEditor 4, see http://drupal.org/node/1853550#comment-6919236
+; Allow individual width/height per field - https://drupal.org/node/507696
+projects[wysiwyg][patch][] = "https://drupal.org/files/wysiwyg_field_size_507696_96_0.patch"
+; Add support for CKEditor 4, see http://drupal.org/node/1853550#comment-6919236
 projects[wysiwyg][patch][] = "http://drupal.org/files/wysiwyg-support_v4_ckeditor-1853550-46.patch"
+; Add support for profile inheritance
+projects[wysiwyg][patch][] = "https://gist.github.com/zensations/5575509/raw/1a413c6d6f6b7be17ca0fe6bcc17d43717f2466e/wysiwyg-profile-inheritance.patch"
 
 ; Using dev version to support responsive images; @todo which issue is that?
 projects[caption_filter][version] = 1.x-dev
