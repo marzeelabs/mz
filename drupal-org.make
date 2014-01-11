@@ -11,7 +11,7 @@ api = 2
 ; --------
 
 ; Entities
-projects[entity][version] = 1.2
+projects[entity][version] = 1.3
 projects[entity][subdir] = "contrib"
 
 projects[field_group][version] = 1.3
