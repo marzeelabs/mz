@@ -104,6 +104,9 @@ projects[backup_migrate][subdir] = "contrib"
 
 projects[libraries][version] = 2.1
 projects[libraries][subdir] = "contrib"
+; Allow libraries to be put also in the parent profile. See https://drupal.org/node/1811486
+projects[libraries][patch][] = "https://gist.github.com/pvhee/8371637/raw/41c33c6c55be15d929843fcb3877fe72afc12309/gistfile1.txt"
+;projects[libraries][patch][] = "https://drupal.org/files/1811486-sub-profiles-2.patch"
 
 projects[jquery_update][version] = 2.x-dev
 projects[jquery_update][subdir] = "contrib"
