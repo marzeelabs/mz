@@ -6,11 +6,18 @@ php:
   # aliased to a recent 5.3.x version
   - 5.3
 
+mysql:
+ database: drupal
+ username: root
+ encoding: utf8
+
 install:
+ - sudo apt-get update > /dev/null
+ - "mysql -e 'create database drupal;'"
  # Install the latest Drush 6.
  - export PATH="$HOME/.composer/vendor/bin:$PATH"
  - composer global require drush/drush:6.*
 
-script: 
- - ./.travis-setup.sh
- - drush make build-mz.make .
+script:
+ - drush make build-mz.make --yes --prepare-install .
+ - drush site-install mz --db-url=mysql://root:@127.0.0.1/drupal --account-name=admin --account-pass=admin --site-mail=admin@example.com --site-name="MZ" --yes

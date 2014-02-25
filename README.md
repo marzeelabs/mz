@@ -1,6 +1,8 @@
 # MZ Make
 **Drupal makefiles and profile from Marzee Labs to kick-start Drupal development**
 
+[![Build Status](https://travis-ci.org/marzeelabs/mz.png?branch=master)](https://travis-ci.org/marzeelabs/mz)
+
 ## Usage
 
 ### Drush make and profile install
