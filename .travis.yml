@@ -1,0 +1,16 @@
+# see http://about.travis-ci.org/docs/user/languages/php/ for more hints
+language: php
+
+# list any PHP version you want to test against
+php:
+  # aliased to a recent 5.3.x version
+  - 5.3
+
+install:
+ # Install the latest Drush 6.
+ - export PATH="$HOME/.composer/vendor/bin:$PATH"
+ - composer global require drush/drush:6.*
+
+script: 
+ - ./.travis-setup.sh
+ - drush make build-mz.make .
