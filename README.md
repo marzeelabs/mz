@@ -5,92 +5,32 @@
 
 ### Drush make and profile install
 
-```sh
-drush make mz_make/mz.make MYSITE --prepare-install
-```
-Builds a Marzee Labs site ready to be installed
+Build a Marzee Labs ready to be installed.
 
-```php
-# put all errors (for debugging environment)
-ini_set('error_reporting, E_ALL);
-error_reporting(E_ALL);
-ini_set('display_errors', TRUE);
-ini_set('display_startup_errors', TRUE);
-```
-Add error support to your local install
+	drush make build-mz.make
 
+### Using Phing to automate build tasks
 
-### Drush make on Pantheon
+[Phing](http://www.phing.info) can be used to automate build tasks. Use [MZ Box](), our Phing boilerplate to kick-start your project.
 
-`http://getpantheon.com`
-Install your site with a vanilla Drupal 7.
+### Topical makefiles
 
-```sh
-git clone git@code.getpantheon.com:ABCD MYSITE
-```
-Clone the Pantheon repository
+Makefiles in topics like i18n, geo, search and commerce are also provided.
 
-```sh
-mz_make_pantheon oc
-```
-Run the installation scripts using the "oc" profile. Make sure these are also installed in the correct location . *Note: run the command twice to commit to git as well (or solve the bug causing this).*
+You can build out e.g. the i18n makefiles into an existing Drupal installation like this
 
-#### Longer version
+	drush make -v --no-core mz_search.make
 
-```sh
-mz_profile_copy mz
-```
-Copy the MZ profile into the profiles folder. Use of the [mz_drush](github.com/marzeelabs/mz_drush) bash commands.
+### Extending the profile
 
-```sh
-cd MYSITE/
-drush make --no-core profiles/mz_make/mz.make .
-```
-Makes a Marzee Labs site without building core
+Currently, Drupal 7 core does not allow to inherit a profile, but [this patch](https://drupal.org/node/2067229) makes this possible and thus building profiles that depend on each other much easier.
 
-```sh
-git add -A .
-git commit -m "Built site from MZ"
-git push origin master
-```
+When you build from this profile, Drupal 7 core is automatically patched, and you can create a new profile and add the following line to `yourprofile.info`
 
-```
-http://dev.MYSITE.getpantheon.com/install.php
-```
-Install your site on Pantheon
+	base = mz
 
-If things go wrong, and you need to reinstall the site, use this script to quickly erase the database + files, run from the site directory.
-
-```sh
-mz_erase_site my-site
-```
-
-### Building make files into existing sites
-
-You can build out e.g. the search or i18n makefiles into an existing Drupal installation like this
-
-```sh
-drush make -v --no-core mz_search.make
-```
-
-### Installation with a custom profile
-
-The recommened way to start a new project is to use the MZ make as a base makefile/profile, and add from there custom modules. You'd also need to keep it up-to-date as you go through the project, so later you can quickly spin off a new project with the module stack used in this project.
-
-<!-- ; Marzee Labs base makefile to spin off new projects
-; Instructions:
-;   Create a new project-specific makefile and profile and place it in your /profiles directory, e.g.
-;      profiles/
-;        mysite/
-;          mysite.make -> include the mz makefile and put any other custom modules
-;            includes[mz] = "https://raw.github.com/marzeelabs/mz_make/master/mz.make?login=marzeelabs&token=9427c4724aaf8c0c27367d0b4a6c8094"
-;          mysite.profile
-;          mysite.install -> create your mysite_install() hook and link back to mz_install()
-;          mysite.info -> copy here modules to install from mz.info and other *.info files
-; Then run drush make and install! -->
-
+Modules and libraries installed in the MZ profile will then be automatically installed in your profile.
 
 ## Credits
 
-* http://marzeelabs.org
-* @marzeelabs
+Developed by [Marzee Labs](http://marzeelabs.org), [@marzeelabs](http://twitter.com/marzeelabs)
