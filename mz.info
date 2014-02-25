@@ -60,6 +60,7 @@ dependencies[] = spamicide
 dependencies[] = caption_filter
 dependencies[] = transliteration
 dependencies[] = taxonomy_entity_index
+dependencies[] = role_export
 
 ; MZ - Media
 dependencies[] = media
@@ -72,7 +73,6 @@ dependencies[] = file_entity
 ; MZ - Editor
 dependencies[] = wysiwyg
 dependencies[] = workbench
-dependencies[] = workbench_files
 dependencies[] = workbench_media
 dependencies[] = workbench_moderation
 dependencies[] = ckeditor_link
@@ -80,7 +80,7 @@ dependencies[] = menu_admin_per_menu
 ;Solve dependency on main make file from within the .install first and contribute patch - if not chosen is useless in a profile info file
 ;dependencies[] = chosen
 
-; MZ -Developer
+; MZ - Developer
 dependencies[] = features
 dependencies[] = devel
 dependencies[] = admin_menu
