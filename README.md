@@ -5,6 +5,8 @@
 
 ### Drush make and profile install
 
+Clone the repository to get started. Make sure you are logged  in to Github and clone from git@, if not drush make will not work.
+
 Build a Marzee Labs ready to be installed.
 
 	drush make build-mz.make
