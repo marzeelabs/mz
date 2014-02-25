@@ -11,7 +11,7 @@ api = 2
 ; --------
 
 ; Entities
-projects[entity][version] = 1.2
+projects[entity][version] = 1.3
 projects[entity][subdir] = "contrib"
 
 projects[field_group][version] = 1.3
@@ -104,6 +104,8 @@ projects[backup_migrate][subdir] = "contrib"
 
 projects[libraries][version] = 2.1
 projects[libraries][subdir] = "contrib"
+; Allow libraries to be put also in the parent profile. See https://drupal.org/node/1811486
+projects[libraries][patch][] = "https://drupal.org/files/1811486-sub-profiles-2.patch"
 
 projects[jquery_update][version] = 2.x-dev
 projects[jquery_update][subdir] = "contrib"
@@ -141,9 +143,10 @@ projects[media][download][revision] = b097d48
 projects[media_youtube][subdir] = "contrib"
 projects[media_youtube][version] = 2.x-dev
 
-; Keep with the dev version until unstable7 is updated
 projects[file_entity][subdir] = "contrib"
 projects[file_entity][version] = 2.x-dev
+; Make sure features file exports are not overwritten. https://gist.github.com/pvhee/8373214. See also https://drupal.org/node/2067909
+projects[file_entity][patch][] = "https://gist.github.com/pvhee/8373214/raw/91c5fdf89bd2a50cca50da9e5763db2e3f2618be/file_entity_remove_file_display_alter_2067909_10.patch"
 
 ; Editor experience
 projects[workbench][version] = 1.2
@@ -167,13 +170,14 @@ projects[workbench_files][subdir] = "contrib"
 projects[ckeditor_link][version] = 2.3
 projects[ckeditor_link][subdir] = "contrib"
 
-projects[wysiwyg][version] = 2.1
+projects[wysiwyg][version] = 2.2
 projects[wysiwyg][subdir] = "contrib"
-projects[wysiwyg][patch][] = "http://drupal.org/files/507696-65.wysiwyg_per_field.patch"
-; see http://drupal.org/node/624018 - seems solved
-projects[wysiwyg][patch][] = "http://drupal.org/files/0001-feature.inc-from-624018-211-drush_make-7.x-2.1.patch"
-; add support for CKEditor 4, see http://drupal.org/node/1853550#comment-6919236
+; Allow individual width/height per field - https://drupal.org/node/507696
+projects[wysiwyg][patch][] = "https://drupal.org/files/wysiwyg_field_size_507696_96_0.patch"
+; Add support for CKEditor 4, see http://drupal.org/node/1853550#comment-6919236
 projects[wysiwyg][patch][] = "http://drupal.org/files/wysiwyg-support_v4_ckeditor-1853550-46.patch"
+; Add support for profile inheritance
+projects[wysiwyg][patch][] = "https://gist.github.com/zensations/5575509/raw/1a413c6d6f6b7be17ca0fe6bcc17d43717f2466e/wysiwyg-profile-inheritance.patch"
 
 ; Using dev version to support responsive images; @todo which issue is that?
 projects[caption_filter][version] = 1.x-dev
