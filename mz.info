@@ -59,6 +59,7 @@ dependencies[] = invisimail
 dependencies[] = spamicide
 dependencies[] = caption_filter
 dependencies[] = transliteration
+dependencies[] = taxonomy_entity_index
 
 ; MZ - Media
 dependencies[] = media

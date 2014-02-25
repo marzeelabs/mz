@@ -62,6 +62,12 @@ projects[menu_block][subdir] = "contrib"
 projects[token][version] = 1.5
 projects[token][subdir] = "contrib"
 
+; We need this module to work around a D7 core limitation in
+; associating e.g. unpublished nodes to taxonomy terms. Will fix
+; also associations between taxonomy terms and entities
+projects[taxonomy_entity_index][version] = 1.0-beta7
+projects[taxonomy_entity_index][subdir] = "contrib"
+
 ; Admin
 projects[admin_menu][version] = 3.0-rc4
 projects[admin_menu][subdir] = "contrib"
@@ -103,6 +109,10 @@ projects[libraries][patch][] = "https://drupal.org/files/1811486-sub-profiles-2.
 projects[jquery_update][version] = 2.x-dev
 projects[jquery_update][subdir] = "contrib"
 
+; To fix role exports for deployments. See https://drupal.org/node/1702626
+projects[role_export][version] = 1.0
+projects[role_export][subdir] = "contrib"
+
 ; SEO
 projects[pathauto][version] = 1.2
 projects[pathauto][subdir] = "contrib"
@@ -124,6 +134,9 @@ projects[transliteration][subdir] = "contrib"
 
 projects[page_title][version] = 2.7
 projects[page_title][subdir] = "contrib"
+
+projects[metatag][version] = 1.0-beta9
+projects[metatag][subdir] = "contrib"
 
 ; Media
 projects[media][subdir] = "contrib"
@@ -157,9 +170,6 @@ projects[workbench_moderation][patch][] = "https://drupal.org/files/workbench_mo
 ; Support for respecting default node publish status, i.e. don't always pass first via Draft. https://drupal.org/node/1408858#comment-6119398. Has issues with users that shouldn't be able to set status to Published
 projects[workbench_moderation][patch][] = "https://drupal.org/files/default-moderation-state-1408858-12.patch"
 
-projects[workbench_files][version] = 1.0
-projects[workbench_files][subdir] = "contrib"
-
 projects[ckeditor_link][version] = 2.3
 projects[ckeditor_link][subdir] = "contrib"
 
@@ -187,15 +197,27 @@ projects[spamicide][version] = 1.1
 projects[spamicide][subdir] = "contrib"
 
 ; UX
-projects[chosen][version] = 2.0-alpha2
+projects[chosen][version] = 2.0-alpha4
 projects[chosen][subdir] = "contrib"
 
 ; Theming
 projects[ds][version] = 2.6
 projects[ds][subdir] = "contrib"
+; DS in combination with Solr, see https://drupal.org/node/2184139
+projects[ds][patch][] = "https://drupal.org/files/issues/ds_search-2184139-missing-entity-causes-exception-2.patch"
 
 projects[fontyourface][version] = 2.8
 projects[fontyourface][subdir] = "contrib"
+
+
+; Migrate
+projects[migrate][version] = 2.5
+projects[migrate][subdir] = "contrib"
+
+projects[migrate_extras][version] = 2.5
+projects[migrate_extras][subdir] = "contrib"
+; Add support for bean migrate; see https://drupal.org/node/1977058
+projects[migrate_extras][patch][] = "https://drupal.org/files/migrate_extras_entity_api_entity_keys_name.patch"
 
 
 ; Libraries
