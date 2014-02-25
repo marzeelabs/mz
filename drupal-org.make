@@ -23,10 +23,7 @@ projects[field_group][subdir] = "contrib"
 projects[entitycache][version] = 1.2
 projects[entitycache][subdir] = "contrib"
 
-; Field types
-; Can be updated to a stable release once 1.1 is released
-
-projects[entityreference][version] = 1.x-dev
+projects[entityreference][version] = 1.1
 projects[entityreference][subdir] = "contrib"
 
 projects[date][version] = 2.7
@@ -53,10 +50,10 @@ projects[views_bulk_operations][subdir] = "contrib"
 projects[rules][version] = 2.6
 projects[rules][subdir] = "contrib"
 
-projects[context][version] = 3.1
+projects[context][version] = 3.2
 projects[context][subdir] = "contrib"
 
-projects[flag][version] = 2.1
+projects[flag][version] = 3.3
 projects[flag][subdir] = "contrib"
 
 projects[menu_block][version] = 2.3
@@ -72,21 +69,16 @@ projects[admin_menu][subdir] = "contrib"
 projects[advanced_help][version] = 1.1
 projects[advanced_help][subdir] = "contrib"
 
-projects[ctools][version] = 1.3
+projects[ctools][version] = 1.4
 projects[ctools][subdir] = "contrib"
 
-projects[module_filter][version] = 1.8
+projects[module_filter][version] = 2.0-alpha2
 projects[module_filter][subdir] = "contrib"
 
 ; Development
-projects[devel][version] = 1.3
+projects[devel][version] = 1.4
 projects[devel][subdir] = "contrib"
 
-; Keep an eye on the following issues
-; - (should be fixed, TBR) https://drupal.org/node/1722524 Allow to export taxonomy using machine name instead of vid
-; - (should be fixed, TBR) https://drupal.org/files/features_static_caches-1063204-32.patch
-; Fixing overrides related to media, see https://drupal.org/node/2071073#comment-7797185
-; - (should be fixed, TBR) https://drupal.org/files/features-get-component-status-do-not-test.patch
 projects[features][version] = 2.0
 projects[features][subdir] = "contrib"
 
@@ -99,6 +91,7 @@ projects[masquerade][subdir] = "contrib"
 projects[diff][version] = 3.2
 projects[diff][subdir] = "contrib"
 
+; Use when deploying on a server which doesn't have automatic backups configured.
 projects[backup_migrate][version] = 2.8
 projects[backup_migrate][subdir] = "contrib"
 
@@ -120,7 +113,7 @@ projects[redirect][subdir] = "contrib"
 projects[globalredirect][version] = 1.5
 projects[globalredirect][subdir] = "contrib"
 
-projects[google_analytics][version] = 1.3
+projects[google_analytics][version] = 1.4
 projects[google_analytics][subdir] = "contrib"
 
 projects[xmlsitemap][version] = 2.0-rc2
@@ -137,7 +130,7 @@ projects[media][subdir] = "contrib"
 projects[media][version] = 2.x-dev
 ; Features export issues, see https://drupal.org/node/2071073
 ;projects[media][patch][] = "https://drupal.org/files/media-warnings-creating-default-object-from-emtpy-value-2071073-1.patch"
-; Media is moving a lot, until this revision we tested. Needs a review and then can be upgraded
+; Media is moving a lot, until this revision we tested. Needs a serious review and then can be upgraded
 projects[media][download][revision] = b097d48
 
 projects[media_youtube][subdir] = "contrib"
