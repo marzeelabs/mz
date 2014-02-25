@@ -209,7 +209,6 @@ projects[ds][patch][] = "https://drupal.org/files/issues/ds_search-2184139-missi
 projects[fontyourface][version] = 2.8
 projects[fontyourface][subdir] = "contrib"
 
-
 ; Migrate
 projects[migrate][version] = 2.5
 projects[migrate][subdir] = "contrib"
@@ -223,9 +222,8 @@ projects[migrate_extras][patch][] = "https://drupal.org/files/migrate_extras_ent
 ; Libraries
 ; ---------
 
-libraries[ckeditor][type] = "libraries"
 libraries[ckeditor][download][type] = "file"
-libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor/CKEditor/CKEditor%204.0.3/ckeditor_4.0.3_standard.zip"
+libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor/CKEditor/CKEditor%204.3/ckeditor_4.3_full.tar.gz"
 
 
 ; Drush
