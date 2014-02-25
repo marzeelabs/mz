@@ -232,13 +232,13 @@ libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor/CKEd
 ; Pandarus - a toolbox to make development on Pantheon easier (http://getpantheon.com)
 ; Using our own repository for the moment, until the d.o repository is fixed
 libraries[pandarus][download][type] = "git"
-libraries[pandarus][download][url] = "git@bitbucket.org:marzeelabs/pandarus.git"
+libraries[pandarus][download][url] = "https://bitbucket.org/marzeelabs/pandarus.git"
 libraries[pandarus][destination] = drush
 libraries[pandarus][directory_name] = pandarus
 
 ; Phing Drush is used to use drush in phing build tasks for CI
 libraries[phing-drush][download][type] = "git"
-libraries[phing-drush][download][url] = "git@bitbucket.org:marzeelabs/phing-drush.git"
+libraries[phing-drush][download][url] = "https://bitbucket.org/marzeelabs/phing-drush.git"
 libraries[phing-drush][destination] = drush
 libraries[phing-drush][directory_name] = phing-drush
 
