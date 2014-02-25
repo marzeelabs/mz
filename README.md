@@ -15,11 +15,13 @@ Build a Marzee Labs ready to be installed.
 
 ### Topical makefiles
 
-Makefiles in topics like i18n, geo, search and commerce are also provided.
+Makefiles in topics like i18n, geo, search and commerce are also provided in `extensions/`
 
 You can build out e.g. the i18n makefiles into an existing Drupal installation like this
 
-	drush make -v --no-core mz_search.make
+	drush make -v --no-core ../mz/extensions/mz_i18n.make .
+	
+You can use the .profile stubs to see which modules can be enabled and added to your profile info file.
 
 ### Extending the profile
 
