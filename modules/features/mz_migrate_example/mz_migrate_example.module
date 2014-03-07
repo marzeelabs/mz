@@ -1,0 +1,20 @@
+<?php
+/**
+ * @file
+ * Code for the MZ Migrate Example feature.
+ */
+
+include_once 'mz_migrate_example.features.inc';
+
+/**
+ * Implements hook_migrate_api().
+ */
+function alw_videop_migrate_api() {
+  $api = array(
+    'api' => 2,
+    'migrations' => array(
+      'ALWVideoPage' => array('class_name' => 'ALWVideoPageMigration'),
+    ),
+  );
+  return $api;
+}
