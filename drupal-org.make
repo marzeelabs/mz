@@ -71,6 +71,8 @@ projects[taxonomy_entity_index][subdir] = "contrib"
 ; Admin
 projects[admin_menu][version] = 3.0-rc4
 projects[admin_menu][subdir] = "contrib"
+; fixes JS error: http://drupal.org/node/1892074
+projects[admin_menu][patch][] = "http://drupal.org/files/issues/admin_menu-remove-ie6-support-1892074-5.patch"
 
 projects[advanced_help][version] = 1.1
 projects[advanced_help][subdir] = "contrib"
