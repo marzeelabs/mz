@@ -4,10 +4,10 @@ api = 2
 ; Projects
 ; --------
 
-projects[search_api][version] = 1.8
+projects[search_api][version] = 1.11
 projects[search_api][subdir] = "contrib"
 
-projects[search_api_db][version] = 1.0-rc3
+projects[search_api_db][version] = 1.2
 projects[search_api_db][subdir] = "contrib"
 
 projects[search_api_page][version] = 1.0
