@@ -20,7 +20,7 @@ install:
 
 script:
  - drush make build-mz.make --yes --prepare-install .
- - drush site-install mz --db-url=mysql://root:@127.0.0.1/drupal --account-name=admin --account-pass=admin --site-mail=admin@example.com --site-name="MZ" --yes
+ - drush site-install mz install_configure_form.update_status_module='array(FALSE,FALSE)'--db-url=mysql://root:@127.0.0.1/drupal --account-name=admin --account-pass=admin --site-mail=admin@example.com --site-name="MZ" --yes
 
 notifications:
  flowdock: 5c81bb34f6ca9c86da0d32d92596a3db
