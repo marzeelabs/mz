@@ -108,7 +108,7 @@ projects[libraries][subdir] = "contrib"
 ; Allow libraries to be put also in the parent profile. See https://drupal.org/node/1811486
 projects[libraries][patch][] = "https://drupal.org/files/1811486-sub-profiles-2.patch"
 
-projects[jquery_update][version] = 2.x-dev
+projects[jquery_update][version] = 2.4
 projects[jquery_update][subdir] = "contrib"
 
 ; To fix role exports for deployments. See https://drupal.org/node/1702626
