@@ -93,7 +93,7 @@ projects[features][subdir] = "contrib"
 projects[strongarm][version] = 2.0
 projects[strongarm][subdir] = "contrib"
 
-projects[masquerade][version] = 1.0-rc5
+projects[masquerade][version] = 1.0-rc7
 projects[masquerade][subdir] = "contrib"
 
 projects[diff][version] = 3.2
@@ -152,9 +152,7 @@ projects[media_youtube][subdir] = "contrib"
 projects[media_youtube][version] = 2.x-dev
 
 projects[file_entity][subdir] = "contrib"
-projects[file_entity][version] = 2.x-dev
-; Make sure features file exports are not overwritten. https://gist.github.com/pvhee/8373214. See also https://drupal.org/node/2067909
-projects[file_entity][patch][] = "https://gist.github.com/pvhee/8373214/raw/91c5fdf89bd2a50cca50da9e5763db2e3f2618be/file_entity_remove_file_display_alter_2067909_10.patch"
+projects[file_entity][version] = 2.0-alpha3
 
 ; Editor experience
 projects[workbench][version] = 1.2
