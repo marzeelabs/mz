@@ -93,7 +93,7 @@ projects[features][subdir] = "contrib"
 projects[strongarm][version] = 2.0
 projects[strongarm][subdir] = "contrib"
 
-projects[masquerade][version] = 1.0-rc5
+projects[masquerade][version] = 1.0-rc7
 projects[masquerade][subdir] = "contrib"
 
 projects[diff][version] = 3.2
