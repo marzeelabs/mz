@@ -42,10 +42,16 @@ install:
  # Disable sendmail
  - echo sendmail_path=`which true` >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
 
-script:
+before_script:
  # Do the site install
  - cd drupal
  - drush site-install mz --db-url=mysql://root:@127.0.0.1/drupal --account-name=admin --account-pass=admin --site-mail=admin@example.com --site-name="MZ" --yes
+
+script:
+ # Enable migrate and test migrate examples
+ - drush en migrate,mz_migrate_example
+ - drush mreg
+ - drush mi --group=mz_example
 
 notifications:
  flowdock: 5c81bb34f6ca9c86da0d32d92596a3db
