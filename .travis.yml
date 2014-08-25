@@ -23,6 +23,7 @@ install:
  - drush cc drush
 
  # Build Codebase
+ - ls -l
  - mkdir private_files
  - mkdir profiles
  - mv mz profiles/
