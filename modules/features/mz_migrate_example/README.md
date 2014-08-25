@@ -3,7 +3,7 @@
 
 ## About
 
-See blog post.
+See our blog post on Content Fixtures: http://marzeelabs.org/blog/2014/03/17/coding-as-a-team-content-fixtures/
 
 ## Credits
 

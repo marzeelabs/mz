@@ -6,10 +6,6 @@
  */
 abstract class MZBaseMigration extends Migration {
 
-  public function __construct() {
-    parent::__construct(MigrateGroup::getInstance('mz'));
-  }
-
   protected function sourceFileOptions() {
     return array(
       'header_rows' => 1,

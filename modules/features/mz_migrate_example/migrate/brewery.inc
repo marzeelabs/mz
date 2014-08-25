@@ -2,8 +2,8 @@
 
 class MZBreweryMigration extends MZBaseMigration {
 
-  public function __construct() {
-    parent::__construct();
+  public function __construct($arguments) {
+    parent::__construct($arguments);
 
     $this->description = t('Import breweries.');
 
@@ -20,7 +20,7 @@ class MZBreweryMigration extends MZBaseMigration {
 
     // Create a MigrateSource object.
     $this->source = new MigrateSourceCSV(
-      drupal_get_path('module', 'mz_migrate_example') . '/import/breweries.csv',
+      drupal_get_path('module', 'mz_migrate_example') . '/migrate/import/breweries.csv',
       array(),
       $this->sourceFileOptions()
     );
@@ -48,7 +48,7 @@ class MZBreweryMigration extends MZBaseMigration {
       ->arguments($address_arguments);
 
     // Date
-    
+
     // Link
     $this->addFieldMapping('field_brewery_link', 'website');
 
