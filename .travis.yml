@@ -49,7 +49,7 @@ before_script:
 
 script:
  # Enable migrate and test migrate examples
- - drush en migrate,mz_migrate_example
+ - drush en migrate,mz_migrate_example -y
  - drush mreg
  - drush mi --group=mz_example
 
