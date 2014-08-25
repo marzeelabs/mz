@@ -11,7 +11,7 @@ api = 2
 ; --------
 
 ; Entities
-projects[entity][version] = 1.3
+projects[entity][version] = 1.5
 projects[entity][subdir] = "contrib"
 
 projects[field_group][version] = 1.3
@@ -26,10 +26,10 @@ projects[entitycache][subdir] = "contrib"
 projects[entityreference][version] = 1.1
 projects[entityreference][subdir] = "contrib"
 
-projects[date][version] = 2.7
+projects[date][version] = 2.8
 projects[date][subdir] = "contrib"
 
-projects[email][version] = 1.2
+projects[email][version] = 1.3
 projects[email][subdir] = "contrib"
 
 projects[link][version] = 1.2
@@ -41,7 +41,7 @@ projects[addressfield][subdir] = "contrib"
 projects[addressfield][patch][] = "https://drupal.org/files/issues/addressfield-nocountry_option-968112-132_1.0-beta4.patch"
 
 ; Site building modules
-projects[views][version] = 3.7
+projects[views][version] = 3.8
 projects[views][subdir] = "contrib"
 
 projects[views_bulk_operations][version] = 3.2
@@ -53,10 +53,10 @@ projects[rules][subdir] = "contrib"
 projects[context][version] = 3.2
 projects[context][subdir] = "contrib"
 
-projects[flag][version] = 3.3
+projects[flag][version] = 3.5
 projects[flag][subdir] = "contrib"
 
-projects[menu_block][version] = 2.3
+projects[menu_block][version] = 2.4
 projects[menu_block][subdir] = "contrib"
 
 projects[token][version] = 1.5
@@ -84,29 +84,28 @@ projects[module_filter][version] = 2.0-alpha2
 projects[module_filter][subdir] = "contrib"
 
 ; Development
-projects[devel][version] = 1.4
+projects[devel][version] = 1.5
 projects[devel][subdir] = "contrib"
 
-projects[features][version] = 2.0
+projects[features][version] = 2.2
 projects[features][subdir] = "contrib"
+
+; Feature Extra: additional exporting capabilities
+projects[features_extra][version] = 1.0-beta1
+projects[features_extra][subdir] = "contrib"
 
 projects[strongarm][version] = 2.0
 projects[strongarm][subdir] = "contrib"
 
-projects[masquerade][version] = 1.0-rc5
+projects[masquerade][version] = 1.0-rc7
 projects[masquerade][subdir] = "contrib"
 
 projects[diff][version] = 3.2
 projects[diff][subdir] = "contrib"
 
 ; Use when deploying on a server which doesn't have automatic backups configured.
-projects[backup_migrate][version] = 2.8
+projects[backup_migrate][version] = 3.0
 projects[backup_migrate][subdir] = "contrib"
-
-;projects[libraries][version] = 2.1
-;projects[libraries][subdir] = "contrib"
-; Allow libraries to be put also in the parent profile. See https://drupal.org/node/1811486
-;projects[libraries][patch][] = "https://drupal.org/files/1811486-sub-profiles-2.patch"
 
 projects[libraries][version] = 2.1
 projects[libraries][subdir] = "contrib"
@@ -135,19 +134,19 @@ projects[redirect][subdir] = "contrib"
 projects[globalredirect][version] = 1.5
 projects[globalredirect][subdir] = "contrib"
 
-projects[google_analytics][version] = 1.4
+projects[google_analytics][version] = 2.0
 projects[google_analytics][subdir] = "contrib"
 
-projects[xmlsitemap][version] = 2.0-rc2
+projects[xmlsitemap][version] = 2.0
 projects[xmlsitemap][subdir] = "contrib"
 
-projects[transliteration][version] = 3.1
+projects[transliteration][version] = 3.2
 projects[transliteration][subdir] = "contrib"
 
 projects[page_title][version] = 2.7
 projects[page_title][subdir] = "contrib"
 
-projects[metatag][version] = 1.0-beta9
+projects[metatag][version] = 1.0-rc2
 projects[metatag][subdir] = "contrib"
 
 ; Media
@@ -160,6 +159,7 @@ projects[media][download][revision] = b097d48
 
 projects[media_youtube][subdir] = "contrib"
 projects[media_youtube][version] = 2.x-dev
+projects[media_youtube][revision] = 187283f
 
 projects[file_entity][subdir] = "contrib"
 ; Use dev release until 2.0-alpha3 is bumped to a new version
@@ -173,14 +173,8 @@ projects[workbench][subdir] = "contrib"
 projects[workbench_media][version] = 1.1
 projects[workbench_media][subdir] = "contrib"
 
-projects[workbench_moderation][version] = 1.3
-projects[workbench_moderation][subdir] = "contrib"
-; (TBR - fixed) Adding support for Migrate, see http://drupal.org/node/1445824#comment-6885874
-;projects[workbench_moderation][patch][] = "http://drupal.org/files/workbench-moderation-migrate-integration-1445824-5-do-not-test.patch"
-; https://drupal.org/node/1445824#comment-7753679
-projects[workbench_moderation][patch][] = "https://drupal.org/files/workbench_moderation-better_migration_support-1445824-11.patch"
-; Support for respecting default node publish status, i.e. don't always pass first via Draft. https://drupal.org/node/1408858#comment-6119398. Has issues with users that shouldn't be able to set status to Published
-projects[workbench_moderation][patch][] = "https://drupal.org/files/default-moderation-state-1408858-12.patch"
+; Note: we used to work with workbench_moderation but gave up due to serious
+; limitations with entity_translation, our preferred way of dealing with i18n
 
 projects[ckeditor_link][version] = 2.3
 projects[ckeditor_link][subdir] = "contrib"
@@ -204,8 +198,8 @@ projects[menu_admin_per_menu][subdir] = "contrib"
 projects[invisimail][version] = 1.1
 projects[invisimail][subdir] = "contrib"
 
-projects[spamicide][version] = 1.1
-projects[spamicide][subdir] = "contrib"
+;projects[spamicide][version] = 1.1
+;projects[spamicide][subdir] = "contrib"
 
 ; UX
 projects[chosen][version] = 2.0-alpha4
@@ -221,14 +215,15 @@ projects[fontyourface][version] = 2.8
 projects[fontyourface][subdir] = "contrib"
 
 ; Migrate
-projects[migrate][version] = 2.5
+projects[migrate][version] = 2.6-rc1
 projects[migrate][subdir] = "contrib"
 
 projects[migrate_extras][version] = 2.5
 projects[migrate_extras][subdir] = "contrib"
 ; Add support for bean migrate; see https://drupal.org/node/1977058
 projects[migrate_extras][patch][] = "https://drupal.org/files/migrate_extras_entity_api_entity_keys_name.patch"
-
+; Adds support for flags 3.X migration
+projects[migrate_extras][patch][] = "http://drupal.org/files/migrate_extras-flag_3_support-2029613-3.patch"
 
 ; Libraries
 ; ---------
