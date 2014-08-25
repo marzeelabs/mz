@@ -103,10 +103,20 @@ projects[diff][subdir] = "contrib"
 projects[backup_migrate][version] = 2.8
 projects[backup_migrate][subdir] = "contrib"
 
+;projects[libraries][version] = 2.1
+;projects[libraries][subdir] = "contrib"
+; Allow libraries to be put also in the parent profile. See https://drupal.org/node/1811486
+;projects[libraries][patch][] = "https://drupal.org/files/1811486-sub-profiles-2.patch"
+
 projects[libraries][version] = 2.1
 projects[libraries][subdir] = "contrib"
-; Allow libraries to be put also in the parent profile. See https://drupal.org/node/1811486
-projects[libraries][patch][] = "https://drupal.org/files/1811486-sub-profiles-2.patch"
+; Custom patch to allow MZ to be used as the base profile.
+; Needs to be changed for every base profile, this is a bit of dirty hack, but until profile
+; inheritance is not yet core supported, we'll just have to deal with that
+; Hack allows libraries to be put also in the parent "mz" profile. See http://drupal.org/node/1811486
+; See https://drupal.org/node/2067229 for the profile inheritance discussion and make sure to use
+; this in combination with the patches on drupal-core, documented in drupal-org-core.make
+projects[libraries][patch][] = "https://gist.githubusercontent.com/pvhee/8c164879a529a4c97ead/raw/b7895ef925f486570adae381fd5228654e0f10ee/gistfile1.txt"
 
 projects[jquery_update][version] = 2.4
 projects[jquery_update][subdir] = "contrib"
@@ -181,12 +191,11 @@ projects[wysiwyg][subdir] = "contrib"
 projects[wysiwyg][patch][] = "https://drupal.org/files/wysiwyg_field_size_507696_96_0.patch"
 ; Add support for CKEditor 4, see http://drupal.org/node/1853550#comment-6919236
 projects[wysiwyg][patch][] = "http://drupal.org/files/wysiwyg-support_v4_ckeditor-1853550-46.patch"
-; Add support for profile inheritance
-projects[wysiwyg][patch][] = "https://gist.github.com/zensations/5575509/raw/1a413c6d6f6b7be17ca0fe6bcc17d43717f2466e/wysiwyg-profile-inheritance.patch"
 
 ; Using dev version to support responsive images; @todo which issue is that?
 projects[caption_filter][version] = 1.x-dev
 projects[caption_filter][subdir] = "contrib"
+projects[caption_filter][revision] = d799f69
 
 projects[menu_admin_per_menu][version] = 1.0
 projects[menu_admin_per_menu][subdir] = "contrib"
