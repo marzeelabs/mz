@@ -2,13 +2,10 @@
 
 class MZTrappistMigration extends MZBaseMigration {
 
-  public function __construct() {
-    parent::__construct();
+  public function __construct($arguments) {
+    parent::__construct($arguments);
 
     $this->description = t('Import trappists.');
-
-    // Dependencies, so we migrate in order.
-    $this->dependencies = array('MZBrewery');
 
     // Create a map object for tracking the relationships between source rows
     $this->map = new MigrateSQLMap($this->machineName,
@@ -23,7 +20,7 @@ class MZTrappistMigration extends MZBaseMigration {
 
     // Create a MigrateSource object.
     $this->source = new MigrateSourceCSV(
-      drupal_get_path('module', 'mz_migrate_example') . '/import/trappists.csv',
+      drupal_get_path('module', 'mz_migrate_example') . '/migrate/import/trappists.csv',
       array(),
       $this->sourceFileOptions()
     );

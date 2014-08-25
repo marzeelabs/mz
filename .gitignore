@@ -1,0 +1,12 @@
+# Empty .gitignore file
+# While contrib modules should never be committed from this repository, it is up to the MZ maintainers to leave these out of the MZ repository
+# Do not ignore the contrib folder here, since possible sub repositories will need to version the contrib directory of MZ, and adding a .gitignore file might conflict
+
+## Add the following to .git/info/exclude (after uncommenting the lines) to ignore only *locally* (tip from http://stackoverflow.com/questions/1753070/git-ignore-files-only-locally)
+
+##################################################################
+## Ignore contrib modules, they should be built using drush make #
+##################################################################
+#modules/contrib
+#drush
+#libraries

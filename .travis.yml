@@ -3,8 +3,8 @@ language: php
 
 # list any PHP version you want to test against
 php:
-  # aliased to a recent 5.3.x version
-  - 5.3
+  # aliased to a recent 5.4.x version
+  - 5.4
 
 mysql:
  database: drupal
@@ -12,15 +12,46 @@ mysql:
  encoding: utf8
 
 install:
+
  - sudo apt-get update > /dev/null
  - "mysql -e 'create database drupal;'"
- # Install the latest Drush 6.
+
+ # Install latest Drush 6.
  - export PATH="$HOME/.composer/vendor/bin:$PATH"
- - composer global require drush/drush:6.*
+ - composer global require --no-interaction --prefer-source drush/drush:6.*
+ - drush dl -y drupalorg_drush-7.x-1.x-dev --destination=$HOME/.drush
+ - drush cc drush
+
+ # Build Codebase
+ - cd ..
+ - mkdir private_files
+ - mkdir profiles
+ - mv mz profiles/
+ - mkdir drupal
+ - mv profiles drupal/
+
+ # Build the current branch
+ - cd drupal
+ - drush make --yes profiles/mz/drupal-org-core.make --prepare-install
+ - drush make --yes profiles/mz/mz.make --no-core --contrib-destination=profiles/mz
+ - cd ../
+
+ # Setup files
+ - sudo chmod -R 777 drupal/sites/all
+
+ # Disable sendmail
+ - echo sendmail_path=`which true` >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
+
+before_script:
+ # Do the site install
+ - cd drupal
+ - drush site-install mz --db-url=mysql://root:@127.0.0.1/drupal --account-name=admin --account-pass=admin --site-mail=admin@example.com --site-name="MZ" --yes
 
 script:
- - drush make build-mz.make --yes --prepare-install .
- - drush site-install mz install_configure_form.update_status_module='array(FALSE,FALSE)' --db-url=mysql://root:@127.0.0.1/drupal --account-name=admin --account-pass=admin --site-mail=admin@example.com --site-name="MZ" --yes
+ # Enable migrate and test migrate examples
+ - drush en migrate,mz_migrate_example -y
+ - drush mreg
+ - drush mi --group=mz_example
 
 notifications:
  flowdock: 5c81bb34f6ca9c86da0d32d92596a3db

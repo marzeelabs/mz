@@ -11,7 +11,7 @@ api = 2
 ; --------
 
 ; Entities
-projects[entity][version] = 1.3
+projects[entity][version] = 1.5
 projects[entity][subdir] = "contrib"
 
 projects[field_group][version] = 1.3
@@ -26,10 +26,10 @@ projects[entitycache][subdir] = "contrib"
 projects[entityreference][version] = 1.1
 projects[entityreference][subdir] = "contrib"
 
-projects[date][version] = 2.7
+projects[date][version] = 2.8
 projects[date][subdir] = "contrib"
 
-projects[email][version] = 1.2
+projects[email][version] = 1.3
 projects[email][subdir] = "contrib"
 
 projects[link][version] = 1.2
@@ -41,7 +41,7 @@ projects[addressfield][subdir] = "contrib"
 projects[addressfield][patch][] = "https://drupal.org/files/issues/addressfield-nocountry_option-968112-132_1.0-beta4.patch"
 
 ; Site building modules
-projects[views][version] = 3.7
+projects[views][version] = 3.8
 projects[views][subdir] = "contrib"
 
 projects[views_bulk_operations][version] = 3.2
@@ -53,10 +53,10 @@ projects[rules][subdir] = "contrib"
 projects[context][version] = 3.2
 projects[context][subdir] = "contrib"
 
-projects[flag][version] = 3.3
+projects[flag][version] = 3.5
 projects[flag][subdir] = "contrib"
 
-projects[menu_block][version] = 2.3
+projects[menu_block][version] = 2.4
 projects[menu_block][subdir] = "contrib"
 
 projects[token][version] = 1.5
@@ -84,29 +84,38 @@ projects[module_filter][version] = 2.0-alpha2
 projects[module_filter][subdir] = "contrib"
 
 ; Development
-projects[devel][version] = 1.4
+projects[devel][version] = 1.5
 projects[devel][subdir] = "contrib"
 
-projects[features][version] = 2.0
+projects[features][version] = 2.2
 projects[features][subdir] = "contrib"
+
+; Feature Extra: additional exporting capabilities
+projects[features_extra][version] = 1.0-beta1
+projects[features_extra][subdir] = "contrib"
 
 projects[strongarm][version] = 2.0
 projects[strongarm][subdir] = "contrib"
 
-projects[masquerade][version] = 1.0-rc5
+projects[masquerade][version] = 1.0-rc7
 projects[masquerade][subdir] = "contrib"
 
 projects[diff][version] = 3.2
 projects[diff][subdir] = "contrib"
 
 ; Use when deploying on a server which doesn't have automatic backups configured.
-projects[backup_migrate][version] = 2.8
+projects[backup_migrate][version] = 3.0
 projects[backup_migrate][subdir] = "contrib"
 
 projects[libraries][version] = 2.1
 projects[libraries][subdir] = "contrib"
-; Allow libraries to be put also in the parent profile. See https://drupal.org/node/1811486
-projects[libraries][patch][] = "https://drupal.org/files/1811486-sub-profiles-2.patch"
+; Custom patch to allow MZ to be used as the base profile.
+; Needs to be changed for every base profile, this is a bit of dirty hack, but until profile
+; inheritance is not yet core supported, we'll just have to deal with that
+; Hack allows libraries to be put also in the parent "mz" profile. See http://drupal.org/node/1811486
+; See https://drupal.org/node/2067229 for the profile inheritance discussion and make sure to use
+; this in combination with the patches on drupal-core, documented in drupal-org-core.make
+projects[libraries][patch][] = "https://gist.githubusercontent.com/pvhee/8c164879a529a4c97ead/raw/b7895ef925f486570adae381fd5228654e0f10ee/gistfile1.txt"
 
 projects[jquery_update][version] = 2.4
 projects[jquery_update][subdir] = "contrib"
@@ -125,19 +134,19 @@ projects[redirect][subdir] = "contrib"
 projects[globalredirect][version] = 1.5
 projects[globalredirect][subdir] = "contrib"
 
-projects[google_analytics][version] = 1.4
+projects[google_analytics][version] = 2.0
 projects[google_analytics][subdir] = "contrib"
 
-projects[xmlsitemap][version] = 2.0-rc2
+projects[xmlsitemap][version] = 2.0
 projects[xmlsitemap][subdir] = "contrib"
 
-projects[transliteration][version] = 3.1
+projects[transliteration][version] = 3.2
 projects[transliteration][subdir] = "contrib"
 
 projects[page_title][version] = 2.7
 projects[page_title][subdir] = "contrib"
 
-projects[metatag][version] = 1.0-beta9
+projects[metatag][version] = 1.0-rc2
 projects[metatag][subdir] = "contrib"
 
 ; Media
@@ -150,11 +159,12 @@ projects[media][download][revision] = b097d48
 
 projects[media_youtube][subdir] = "contrib"
 projects[media_youtube][version] = 2.x-dev
+projects[media_youtube][revision] = 187283f
 
 projects[file_entity][subdir] = "contrib"
+; Use dev release until 2.0-alpha3 is bumped to a new version
 projects[file_entity][version] = 2.x-dev
-; Make sure features file exports are not overwritten. https://gist.github.com/pvhee/8373214. See also https://drupal.org/node/2067909
-projects[file_entity][patch][] = "https://gist.github.com/pvhee/8373214/raw/91c5fdf89bd2a50cca50da9e5763db2e3f2618be/file_entity_remove_file_display_alter_2067909_10.patch"
+projects[file_entity][revision] = 1e037ad
 
 ; Editor experience
 projects[workbench][version] = 1.2
@@ -163,14 +173,8 @@ projects[workbench][subdir] = "contrib"
 projects[workbench_media][version] = 1.1
 projects[workbench_media][subdir] = "contrib"
 
-projects[workbench_moderation][version] = 1.3
-projects[workbench_moderation][subdir] = "contrib"
-; (TBR - fixed) Adding support for Migrate, see http://drupal.org/node/1445824#comment-6885874
-;projects[workbench_moderation][patch][] = "http://drupal.org/files/workbench-moderation-migrate-integration-1445824-5-do-not-test.patch"
-; https://drupal.org/node/1445824#comment-7753679
-projects[workbench_moderation][patch][] = "https://drupal.org/files/workbench_moderation-better_migration_support-1445824-11.patch"
-; Support for respecting default node publish status, i.e. don't always pass first via Draft. https://drupal.org/node/1408858#comment-6119398. Has issues with users that shouldn't be able to set status to Published
-projects[workbench_moderation][patch][] = "https://drupal.org/files/default-moderation-state-1408858-12.patch"
+; Note: we used to work with workbench_moderation but gave up due to serious
+; limitations with entity_translation, our preferred way of dealing with i18n
 
 projects[ckeditor_link][version] = 2.3
 projects[ckeditor_link][subdir] = "contrib"
@@ -181,12 +185,11 @@ projects[wysiwyg][subdir] = "contrib"
 projects[wysiwyg][patch][] = "https://drupal.org/files/wysiwyg_field_size_507696_96_0.patch"
 ; Add support for CKEditor 4, see http://drupal.org/node/1853550#comment-6919236
 projects[wysiwyg][patch][] = "http://drupal.org/files/wysiwyg-support_v4_ckeditor-1853550-46.patch"
-; Add support for profile inheritance
-projects[wysiwyg][patch][] = "https://gist.github.com/zensations/5575509/raw/1a413c6d6f6b7be17ca0fe6bcc17d43717f2466e/wysiwyg-profile-inheritance.patch"
 
 ; Using dev version to support responsive images; @todo which issue is that?
 projects[caption_filter][version] = 1.x-dev
 projects[caption_filter][subdir] = "contrib"
+projects[caption_filter][revision] = d799f69
 
 projects[menu_admin_per_menu][version] = 1.0
 projects[menu_admin_per_menu][subdir] = "contrib"
@@ -195,8 +198,8 @@ projects[menu_admin_per_menu][subdir] = "contrib"
 projects[invisimail][version] = 1.1
 projects[invisimail][subdir] = "contrib"
 
-projects[spamicide][version] = 1.1
-projects[spamicide][subdir] = "contrib"
+;projects[spamicide][version] = 1.1
+;projects[spamicide][subdir] = "contrib"
 
 ; UX
 projects[chosen][version] = 2.0-alpha4
@@ -212,14 +215,15 @@ projects[fontyourface][version] = 2.8
 projects[fontyourface][subdir] = "contrib"
 
 ; Migrate
-projects[migrate][version] = 2.5
+projects[migrate][version] = 2.6-rc1
 projects[migrate][subdir] = "contrib"
 
 projects[migrate_extras][version] = 2.5
 projects[migrate_extras][subdir] = "contrib"
 ; Add support for bean migrate; see https://drupal.org/node/1977058
 projects[migrate_extras][patch][] = "https://drupal.org/files/migrate_extras_entity_api_entity_keys_name.patch"
-
+; Adds support for flags 3.X migration
+projects[migrate_extras][patch][] = "http://drupal.org/files/migrate_extras-flag_3_support-2029613-3.patch"
 
 ; Libraries
 ; ---------
