@@ -98,7 +98,7 @@ dependencies[] = globalredirect
 ;dependencies[] = redirect
 
 
-; MZ - features
-dependencies[] = mz_site
-dependencies[] = mz_editorial
+; MZ - features, do not enable by default
+;dependencies[] = mz_site
+;dependencies[] = mz_editorial
 
