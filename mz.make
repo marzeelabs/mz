@@ -231,20 +231,19 @@ projects[migrate_extras][patch][] = "http://drupal.org/files/migrate_extras-flag
 libraries[ckeditor][download][type] = "file"
 libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor/CKEditor/CKEditor%204.3/ckeditor_4.3_full.tar.gz"
 
-
 ; Drush
 ; -----
 
-; Pandarus - a toolbox to make development on Pantheon easier (http://getpantheon.com)
-; Using our own repository for the moment, until the d.o repository is fixed
-libraries[pandarus][download][type] = "git"
-libraries[pandarus][download][url] = "https://bitbucket.org/marzeelabs/pandarus.git"
-libraries[pandarus][destination] = drush
-libraries[pandarus][directory_name] = pandarus
+; Phing Drush support. Use dev until 1.1 released
+projects[phingdrushtask][download][type] = "git"
+projects[phingdrushtask][download][url] = "http://git.drupal.org/project/phingdrushtask.git"
+projects[phingdrushtask][download][branch] = "7.x-1.x"
+projects[phingdrushtask][download][revision] = 10b9919
+projects[phingdrushtask][subdir] = drush
 
 ; Phing Drush is used to use drush in phing build tasks for CI
-libraries[phing-drush][download][type] = "git"
-libraries[phing-drush][download][url] = "https://bitbucket.org/marzeelabs/phing-drush.git"
-libraries[phing-drush][destination] = drush
-libraries[phing-drush][directory_name] = phing-drush
+;libraries[phing-drush][download][type] = "git"
+;libraries[phing-drush][download][url] = "https://bitbucket.org/marzeelabs/phing-drush.git"
+;libraries[phing-drush][destination] = drush
+;libraries[phing-drush][directory_name] = phing-drush
 
