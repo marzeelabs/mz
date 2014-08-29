@@ -22,8 +22,16 @@ install:
  - drush dl -y drupalorg_drush-7.x-1.x-dev --destination=$HOME/.drush
  - drush cc drush
 
+ # Build Behat dependencies
+ - cd ./tests/behat
+ - composer install --no-interaction --prefer-source
+ - cd ../../../
+
+ # Setting Behat environment
+ - DISTRO=`echo $TRAVIS_BUILD_DIR | sed -e "s/\/[^\/]*$//"`
+ - export BEHAT_PARAMS="extensions[Drupal\\DrupalExtension\\Extension][drupal][drupal_root]=$DISTRO/drupal"
+
  # Build Codebase
- - cd ..
  - mkdir private_files
  - mkdir profiles
  - mv mz profiles/
@@ -39,6 +47,16 @@ install:
  # Setup files
  - sudo chmod -R 777 drupal/sites/all
 
+ # Setup display for Selenium
+ - export DISPLAY=:99.0
+ - sh -e /etc/init.d/xvfb start
+ - sleep 5
+
+ # Get Selenium
+ - wget http://selenium-release.storage.googleapis.com/2.42/selenium-server-standalone-2.42.1.jar
+ - java -jar selenium-server-standalone-2.42.1.jar > /dev/null 2>&1 &
+ - until netstat -an 2>/dev/null | grep '4444.*LISTEN'; do true; done
+
  # Disable sendmail
  - echo sendmail_path=`which true` >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
 
@@ -47,11 +65,21 @@ before_script:
  - cd drupal
  - drush site-install mz --db-url=mysql://root:@127.0.0.1/drupal --account-name=admin --account-pass=admin --site-mail=admin@example.com --site-name="MZ" --yes
 
-script:
  # Enable migrate and test migrate examples
  - drush en migrate,mz_migrate_example -y
  - drush mreg
  - drush mi --group=mz_example
 
+ # Start server
+ - drush runserver --server=builtin 8888 > /dev/null 2>&1 &
+ - until netstat -an 2>/dev/null | grep '8888.*LISTEN'; do true; done
+ - cd profiles/mz/tests/behat
+
+script:
+
+ # Run Behat tests
+ - ./bin/behat --config behat.travis.yml
+
 notifications:
+ # Our MZ Flowdock chat
  flowdock: 5c81bb34f6ca9c86da0d32d92596a3db
