@@ -8,4 +8,3 @@ Feature: Features should be in default state
     When I am logged in as a user with the "administrator" role
     And I go to "/admin/structure/features"
     Then I should not see "Conflicts with"
-    Then I should not see "Overridden"
