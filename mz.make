@@ -16,8 +16,9 @@ projects[entity][subdir] = "contrib"
 
 projects[field_group][version] = 1.3
 projects[field_group][subdir] = "contrib"
-; Allow preprocess fields to be within field_groups. Still has issues unfortunately. Read on http://drupal.org/node/1342878
+; Allow preprocess fields to be within field_groups. Still has issues unfortunately.
 ; It doesn't apply cleanly anymore, so we disable it for now. When we notice errors we can revisit
+; @see http://drupal.org/node/1342878
 ;projects[field_group][patch][] = "http://drupal.org/files/fieldgroup-preprocess-1342878_0.patch"
 
 projects[entitycache][version] = 1.2
@@ -35,9 +36,16 @@ projects[email][subdir] = "contrib"
 projects[link][version] = 1.2
 projects[link][subdir] = "contrib"
 
+projects[link][version] = 1.2
+projects[link][subdir] = "contrib"
+; 'title_value' in 'link_field_update_instance' undefined;
+; @see https://www.drupal.org/node/1914286
+projects[link][patch][] = "http://drupal.org/files/Fixed_title_value_in_link_field_update_instance_undefined-1914286-3.patch"
+
+
 projects[addressfield][version] = 1.0-beta5
 projects[addressfield][subdir] = "contrib"
-; See http://drupal.org/node/968112#comment-6581524
+; @see http://drupal.org/node/968112#comment-6581524
 projects[addressfield][patch][] = "https://drupal.org/files/issues/addressfield-nocountry_option-968112-132_1.0-beta4.patch"
 
 ; Site building modules
@@ -71,7 +79,8 @@ projects[taxonomy_entity_index][subdir] = "contrib"
 ; Admin
 projects[admin_menu][version] = 3.0-rc4
 projects[admin_menu][subdir] = "contrib"
-; fixes JS error: http://drupal.org/node/1892074
+; fixes JS error
+; @see http://drupal.org/node/1892074
 projects[admin_menu][patch][] = "http://drupal.org/files/issues/admin_menu-remove-ie6-support-1892074-5.patch"
 
 projects[advanced_help][version] = 1.1
@@ -181,9 +190,11 @@ projects[ckeditor_link][subdir] = "contrib"
 
 projects[wysiwyg][version] = 2.2
 projects[wysiwyg][subdir] = "contrib"
-; Allow individual width/height per field - https://drupal.org/node/507696
+; Allow individual width/height per field
+; @see https://drupal.org/node/507696
 projects[wysiwyg][patch][] = "https://drupal.org/files/wysiwyg_field_size_507696_96_0.patch"
-; Add support for CKEditor 4, see http://drupal.org/node/1853550#comment-6919236
+; Add support for CKEditor 4
+; @see http://drupal.org/node/1853550#comment-6919236
 projects[wysiwyg][patch][] = "http://drupal.org/files/wysiwyg-support_v4_ckeditor-1853550-46.patch"
 
 ; Using dev version to support responsive images; @todo which issue is that?
@@ -208,7 +219,8 @@ projects[chosen][subdir] = "contrib"
 ; Theming
 projects[ds][version] = 2.6
 projects[ds][subdir] = "contrib"
-; DS in combination with Solr, see https://drupal.org/node/2184139
+; DS in combination with Solr
+; @see https://drupal.org/node/2184139
 projects[ds][patch][] = "https://drupal.org/files/issues/ds_search-2184139-missing-entity-causes-exception-2.patch"
 
 projects[fontyourface][version] = 2.8
@@ -220,7 +232,8 @@ projects[migrate][subdir] = "contrib"
 
 projects[migrate_extras][version] = 2.5
 projects[migrate_extras][subdir] = "contrib"
-; Add support for bean migrate; see https://drupal.org/node/1977058
+; Add support for bean migrate
+; @see https://drupal.org/node/1977058
 projects[migrate_extras][patch][] = "https://drupal.org/files/migrate_extras_entity_api_entity_keys_name.patch"
 ; Adds support for flags 3.X migration
 projects[migrate_extras][patch][] = "http://drupal.org/files/migrate_extras-flag_3_support-2029613-3.patch"
@@ -240,10 +253,3 @@ projects[phingdrushtask][download][url] = "http://git.drupal.org/project/phingdr
 projects[phingdrushtask][download][branch] = "7.x-1.x"
 projects[phingdrushtask][download][revision] = 10b9919
 projects[phingdrushtask][subdir] = drush
-
-; Phing Drush is used to use drush in phing build tasks for CI
-;libraries[phing-drush][download][type] = "git"
-;libraries[phing-drush][download][url] = "https://bitbucket.org/marzeelabs/phing-drush.git"
-;libraries[phing-drush][destination] = drush
-;libraries[phing-drush][directory_name] = phing-drush
-
