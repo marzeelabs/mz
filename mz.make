@@ -14,12 +14,8 @@ api = 2
 projects[entity][version] = 1.5
 projects[entity][subdir] = "contrib"
 
-projects[field_group][version] = 1.3
+projects[field_group][version] = 1.4
 projects[field_group][subdir] = "contrib"
-; Allow preprocess fields to be within field_groups. Still has issues unfortunately.
-; It doesn't apply cleanly anymore, so we disable it for now. When we notice errors we can revisit
-; @see http://drupal.org/node/1342878
-;projects[field_group][patch][] = "http://drupal.org/files/fieldgroup-preprocess-1342878_0.patch"
 
 projects[entitycache][version] = 1.2
 projects[entitycache][subdir] = "contrib"
@@ -33,20 +29,14 @@ projects[date][subdir] = "contrib"
 projects[email][version] = 1.3
 projects[email][subdir] = "contrib"
 
-projects[link][version] = 1.2
+projects[link][version] = 1.3
 projects[link][subdir] = "contrib"
+; Provide the original_url when loading the field.
+; @see https://www.drupal.org/node/1475790#comment-7743415
+projects[link][patch][] = "http://www.drupal.org/files/7.x-1.x-_link_sanitize-bandaid-1475790-16.diff"
 
-projects[link][version] = 1.2
-projects[link][subdir] = "contrib"
-; 'title_value' in 'link_field_update_instance' undefined;
-; @see https://www.drupal.org/node/1914286
-projects[link][patch][] = "http://drupal.org/files/Fixed_title_value_in_link_field_update_instance_undefined-1914286-3.patch"
-
-
-projects[addressfield][version] = 1.0-beta5
+projects[addressfield][version] = 1.0-rc1
 projects[addressfield][subdir] = "contrib"
-; @see http://drupal.org/node/968112#comment-6581524
-projects[addressfield][patch][] = "https://drupal.org/files/issues/addressfield-nocountry_option-968112-132_1.0-beta4.patch"
 
 ; Site building modules
 projects[views][version] = 3.8
@@ -116,15 +106,11 @@ projects[diff][subdir] = "contrib"
 projects[backup_migrate][version] = 3.0
 projects[backup_migrate][subdir] = "contrib"
 
-projects[libraries][version] = 2.1
+projects[libraries][version] = 2.2
 projects[libraries][subdir] = "contrib"
-; Custom patch to allow MZ to be used as the base profile.
-; Needs to be changed for every base profile, this is a bit of dirty hack, but until profile
-; inheritance is not yet core supported, we'll just have to deal with that
-; Hack allows libraries to be put also in the parent "mz" profile. See http://drupal.org/node/1811486
-; See https://drupal.org/node/2067229 for the profile inheritance discussion and make sure to use
-; this in combination with the patches on drupal-core, documented in drupal-org-core.make
-projects[libraries][patch][] = "https://gist.githubusercontent.com/pvhee/8c164879a529a4c97ead/raw/b7895ef925f486570adae381fd5228654e0f10ee/gistfile1.txt"
+; Allow libraries to be put also in the parent profile. See http://drupal.org/node/1811486
+; projects[libraries][patch][] = "http://drupal.org/files/1811486-sub-profiles-2.patch"
+projects[libraries][patch][] = "http://gist.github.com/pvhee/7307987/raw/c2cbf531d6766895d4a25c6292974596f26b7d3f/gistfile1.txt"
 
 projects[jquery_update][version] = 2.4
 projects[jquery_update][subdir] = "contrib"
@@ -242,7 +228,7 @@ projects[migrate_extras][patch][] = "http://drupal.org/files/migrate_extras-flag
 ; ---------
 
 libraries[ckeditor][download][type] = "file"
-libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor/CKEditor/CKEditor%204.3/ckeditor_4.3_full.tar.gz"
+libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor/CKEditor/CKEditor%204.4.4/ckeditor_4.4.4_full.zip"
 
 ; Drush
 ; -----
