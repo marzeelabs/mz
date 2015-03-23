@@ -11,7 +11,7 @@ api = 2
 ; --------
 
 ; Entities
-projects[entity][version] = 1.5
+projects[entity][version] = 1.6
 projects[entity][subdir] = "contrib"
 
 projects[field_group][version] = 1.4
@@ -35,11 +35,11 @@ projects[link][subdir] = "contrib"
 ; @see https://www.drupal.org/node/1475790#comment-7743415
 projects[link][patch][] = "http://www.drupal.org/files/7.x-1.x-_link_sanitize-bandaid-1475790-16.diff"
 
-projects[addressfield][version] = 1.0-rc1
+projects[addressfield][version] = 1.0
 projects[addressfield][subdir] = "contrib"
 
 ; Site building modules
-projects[views][version] = 3.8
+projects[views][version] = 3.10
 projects[views][subdir] = "contrib"
 
 projects[views_bulk_operations][version] = 3.2
@@ -48,7 +48,7 @@ projects[views_bulk_operations][subdir] = "contrib"
 projects[rules][version] = 2.6
 projects[rules][subdir] = "contrib"
 
-projects[context][version] = 3.2
+projects[context][version] = 3.6
 projects[context][subdir] = "contrib"
 
 projects[flag][version] = 3.5
@@ -67,26 +67,23 @@ projects[taxonomy_entity_index][version] = 1.0-beta7
 projects[taxonomy_entity_index][subdir] = "contrib"
 
 ; Admin
-projects[admin_menu][version] = 3.0-rc4
+projects[admin_menu][version] = 3.0-rc5
 projects[admin_menu][subdir] = "contrib"
-; fixes JS error
-; @see http://drupal.org/node/1892074
-projects[admin_menu][patch][] = "http://drupal.org/files/issues/admin_menu-remove-ie6-support-1892074-5.patch"
 
 projects[advanced_help][version] = 1.1
 projects[advanced_help][subdir] = "contrib"
 
-projects[ctools][version] = 1.4
+projects[ctools][version] = 1.7
 projects[ctools][subdir] = "contrib"
 
-projects[module_filter][version] = 2.0-alpha2
+projects[module_filter][version] = 2.0
 projects[module_filter][subdir] = "contrib"
 
 ; Development
 projects[devel][version] = 1.5
 projects[devel][subdir] = "contrib"
 
-projects[features][version] = 2.2
+projects[features][version] = 2.4
 projects[features][subdir] = "contrib"
 
 ; Feature Extra: additional exporting capabilities
